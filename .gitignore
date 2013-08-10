@@ -1,0 +1,7 @@
+/bin
+/.classpath
+/.project
+/.git
+/.settings
+# Actual config used for testing.
+/config/fate_config.xml

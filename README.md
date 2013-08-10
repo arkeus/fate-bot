@@ -1,0 +1,1 @@
+An in progress bot built for #lightninghoof. Will fill in readme with more info should I get far enough for it to matter.

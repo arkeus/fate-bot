@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bot>
+	<!-- The nickname the bot will attempt to use when connecting to the server. Required. -->
+	<nick>FateBot</nick>
+	<!-- The alternate nickname the bot will attempt to use when connecting to the server if nick is taken. Optional. -->
+	<altNick>FateBot_</altNick>
+	<!-- The password to identify the nickname with. Optional. -->
+	<password>example_password</password>
+	<!-- The server to connect to. Required. -->
+	<server>irc.freenode.net</server>
+	<!-- The channel to connect to. Required. -->
+	<channel>#example</channel>
+	<!-- Whether or not to run in verbose mode. Optional. Default false. -->
+	<verbose>true</verbose>
+	<!-- Internal login of the bot. Optional. Default FateBot. -->
+	<login>FateBot</login>
+</bot>
