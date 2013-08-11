@@ -5,6 +5,7 @@ import io.arkeus.fatebot.Fate;
 import java.util.regex.Pattern;
 
 import org.jibble.pircbot.Colors;
+import org.jibble.pircbot.User;
 
 public class TrapHandler extends MessageHandler {
 	private String trap;
@@ -24,7 +25,8 @@ public class TrapHandler extends MessageHandler {
 		}
 
 		if (pattern.matcher(Colors.removeFormattingAndColors(message).toLowerCase()).find()) {
-			final String target = Math.random() < 0.2 && bot.getUser(trapper) != null ? trapper : sender;
+			final User trapperUser = bot.getUser(trapper);
+			final String target = Math.random() < 0.2 && trapperUser != null && !trapperUser.isOp() ? trapper : sender;
 			if (!bot.getUser(target).isOp()) {
 				bot.kick(channel, target, "You have activated my trap card: [Shadow Word: " + trap + "]! I banish you to the Shadow Realm!" + (sender != target ? " But what's this? My spell has been reflected at the one who set the trap!" : ""));
 			} else {
