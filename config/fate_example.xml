@@ -14,4 +14,8 @@
 	<verbose>true</verbose>
 	<!-- Internal login of the bot. Optional. Default FateBot. -->
 	<login>FateBot</login>
+	<!-- String that indicates a command. For example, to change command notation from ;say to !say, change the prefix to !. Optional. Default ;. -->
+	<prefix>;</prefix>
+	<!-- Path to the data directory. This is where databases and other saved files will be stored. Must exist. Required. -->
+	<directory>/home/fatebot/data</directory>
 </bot>

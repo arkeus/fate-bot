@@ -1,5 +1,7 @@
 package io.arkeus.fatebot.config;
 
+import java.io.File;
+
 public class Config {
 	private String nick;
 	private String altNick;
@@ -8,6 +10,8 @@ public class Config {
 	private String channel;
 	private Boolean verbose;
 	private String login;
+	private String prefix;
+	private File root;
 
 	public String getNick() {
 		return nick;
@@ -63,5 +67,25 @@ public class Config {
 
 	public void setLogin(final String login) {
 		this.login = login;
+	}
+
+	public String getPrefix() {
+		return prefix;
+	}
+
+	public void setPrefix(final String prefix) {
+		this.prefix = prefix;
+	}
+
+	public File getRoot() {
+		return root;
+	}
+
+	public void setRoot(final File root) {
+		this.root = root;
+	}
+
+	public void setRoot(final String root) {
+		this.root = new File(root);
 	}
 }

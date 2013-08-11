@@ -34,6 +34,8 @@ public class ConfigReader {
 		config.setChannel(getString("channel", null));
 		config.setVerbose(getBoolean("verbose", false));
 		config.setLogin(getString("login", "FateBot"));
+		config.setPrefix(getString("prefix", ";"));
+		config.setRoot(getString("directory", null));
 
 		return config;
 	}
