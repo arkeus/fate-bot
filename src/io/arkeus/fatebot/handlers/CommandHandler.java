@@ -7,8 +7,8 @@ import io.arkeus.fatebot.commands.CommandException;
 import io.arkeus.fatebot.commands.CommandMap;
 import io.arkeus.fatebot.commands.InvalidCommandException;
 import io.arkeus.fatebot.commands.impl.LyricsCommand;
-import io.arkeus.fatebot.commands.impl.SayCommand;
 import io.arkeus.fatebot.commands.impl.TrapCommand;
+import io.arkeus.fatebot.commands.impl.UserCommand;
 
 public class CommandHandler extends MessageHandler {
 	private final CommandMap commandMap;
@@ -17,9 +17,10 @@ public class CommandHandler extends MessageHandler {
 		super(bot);
 
 		commandMap = new CommandMap();
-		commandMap.registerCommand(SayCommand.class, "say", "s");
+		//commandMap.registerCommand(SayCommand.class, "say", "s");
 		commandMap.registerCommand(LyricsCommand.class, "lyrics", "l");
 		commandMap.registerCommand(TrapCommand.class, "trap", "t");
+		commandMap.registerCommand(UserCommand.class, "user", "u");
 	}
 
 	@Override
