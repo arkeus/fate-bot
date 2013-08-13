@@ -4,6 +4,7 @@ import io.arkeus.fatebot.config.Config;
 import io.arkeus.fatebot.executors.ChronoThread;
 import io.arkeus.fatebot.handlers.CommandHandler;
 import io.arkeus.fatebot.handlers.MessageHandler;
+import io.arkeus.fatebot.handlers.PingHandler;
 import io.arkeus.fatebot.handlers.TraceHandler;
 import io.arkeus.fatebot.handlers.TrapHandler;
 import io.arkeus.fatebot.handlers.UserHandler;
@@ -42,6 +43,7 @@ public class Fate extends PircBot {
 		handlers.put("trap", new TrapHandler(this));
 		handlers.put("command", new CommandHandler(this));
 		handlers.put("user", new UserHandler(this));
+		handlers.put("ping", new PingHandler(this));
 		Fate.logger.info("Handlers initialized");
 	}
 
@@ -95,6 +97,15 @@ public class Fate extends PircBot {
 	}
 
 	@Override
+	protected void onNotice(final String sourceNick, final String sourceLogin, final String sourceHostname, final String target, final String notice) {
+		if (config.getPassword() == null || config.getPassword().isEmpty() || notice.indexOf("This nickname is registered") == -1) {
+			return;
+		}
+
+		identify(config.getPassword());
+	}
+
+	@Override
 	protected void onDisconnect() {
 		Fate.logger.warn("Fate has been disconnected.");
 
@@ -104,7 +115,7 @@ public class Fate extends PircBot {
 				reconnect();
 			} catch (final Exception e) {
 				try {
-					Thread.sleep(5000);
+					Thread.sleep(25000);
 				} catch (final InterruptedException ignore) {}
 			}
 		}
@@ -115,8 +126,13 @@ public class Fate extends PircBot {
 			Fate.logger.info("Not in channel, skipping chrono tick");
 			return;
 		}
+
 		Fate.logger.info("Chrono Tick");
 		users.updateActiveUsers(getUsers(config.getChannel()));
+
+		if (getNick() != config.getNick()) {
+			setName(config.getNick());
+		}
 	}
 
 	public void initialize() throws NickAlreadyInUseException, IOException, IrcException {
@@ -131,12 +147,12 @@ public class Fate extends PircBot {
 		try {
 			connect(config.getServer());
 		} catch (final NickAlreadyInUseException e) {
-			setName(config.getAltNick());
-			connect(config.getServer());
-		}
-
-		if (config.getPassword() != null && !config.getPassword().isEmpty()) {
-			identify(config.getPassword());
+			if (config.getAltNick() != null && !config.getAltNick().isEmpty()) {
+				setName(config.getAltNick());
+				connect(config.getServer());
+			} else {
+				throw e;
+			}
 		}
 
 		joinChannel(config.getChannel());

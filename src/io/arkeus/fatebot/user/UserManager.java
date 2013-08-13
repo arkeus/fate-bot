@@ -42,7 +42,7 @@ public class UserManager {
 		return users.get(normalizedNick);
 	}
 
-	private static String normalizeNick(final String nick) {
+	public static String normalizeNick(final String nick) {
 		return nick.toLowerCase();
 	}
 }
