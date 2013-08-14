@@ -35,7 +35,7 @@ public class PingHandler extends MessageHandler {
 		for (final String nick : pingableUsers) {
 			// Do a quick indexOf before the more expensive regex. Investigate performance of this. 4770k can't handle this shit.
 			if (normalizedMessage.indexOf(nick) != -1 /*&& !sender.equalsIgnoreCase(nick)*/ && normalizedMessage.matches(".*\\b" + nick + "\\b.*")) {
-				addPing(nick, message);
+				addPing(nick, sender, message);
 			}
 		}
 
@@ -67,12 +67,12 @@ public class PingHandler extends MessageHandler {
 		}
 	}
 
-	private void addPing(final String nick, final String message) {
+	private void addPing(final String nick, final String sender, final String message) {
 		if (!pingMap.containsKey(nick)) {
 			pingMap.put(nick, new ArrayList<Message>());
 		}
 		final List<Message> list = pingMap.get(nick);
-		list.add(new Message(nick, message, System.currentTimeMillis(), bot.getConfig().getChannel()));
+		list.add(new Message(sender, message, System.currentTimeMillis(), bot.getConfig().getChannel()));
 	}
 
 	public List<Message> getPings(final String nick) {

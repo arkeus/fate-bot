@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 import io.arkeus.fatebot.Fate;
 
 public class ChronoThread extends Thread {
-	private static final long TIME_DELAY = TimeUnit.MINUTES.toMillis(5);
+	private static final long TIME_DELAY = TimeUnit.MINUTES.toMillis(10);
 
 	private final Fate bot;
 

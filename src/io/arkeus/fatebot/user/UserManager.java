@@ -43,6 +43,6 @@ public class UserManager {
 	}
 
 	public static String normalizeNick(final String nick) {
-		return nick.toLowerCase();
+		return nick.toLowerCase().trim();
 	}
 }

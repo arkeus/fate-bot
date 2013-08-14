@@ -1,14 +1,15 @@
 package io.arkeus.fatebot.user;
 
-import java.util.Date;
+import io.arkeus.fatebot.Fate;
 
 public class FateUser {
-	private static final long EFFECT_MESSAGE_DELAY = 2_000;
+	private static final long EFFECT_MESSAGE_DELAY = 5_000;
 
 	private final String nick;
 	private int messages;
 	private int effectiveMessages;
 	private long lastMessageTime;
+	private long lastEffectiveMessageTime;
 	private long lastIdleTime;
 	private int idleTicks;
 
@@ -16,7 +17,8 @@ public class FateUser {
 		this.nick = nick;
 		this.messages = 0;
 		this.effectiveMessages = 0;
-		this.lastMessageTime = 0;
+		this.lastMessageTime = System.currentTimeMillis();
+		this.lastEffectiveMessageTime = System.currentTimeMillis();
 		this.idleTicks = 0;
 	}
 
@@ -25,13 +27,35 @@ public class FateUser {
 	}
 
 	public void addMessage() {
+		final long now = System.currentTimeMillis();
 		messages++;
+		lastMessageTime = now;
 
-		final long now = new Date().getTime();
-		if (lastMessageTime < now - EFFECT_MESSAGE_DELAY) {
-			lastMessageTime = now;
+		if (lastEffectiveMessageTime < now - EFFECT_MESSAGE_DELAY) {
+			lastEffectiveMessageTime = now;
 			effectiveMessages++;
 		}
+	}
+
+	public int getLevel() {
+		// math is hard
+		// y = 100x + 5x²
+		// x = sqrt(y+500)/sqrt(5)-10 ~~ 0.44721 sqrt(y+500.00)-10.000
+		return (int) (Math.sqrt(getExperience() + 500) / Math.sqrt(5) - 10) + 1;
+	}
+
+	public int getExperience() {
+		Fate.logger.info("Idle ticks " + idleTicks);
+		Fate.logger.info("Effective " + effectiveMessages);
+		Fate.logger.info("Messages " + messages);
+		return idleTicks * 2 + effectiveMessages * 2;
+	}
+
+	public int getExperienceRequiredForLevel(final int level) {
+		if (level < 2) {
+			return 0;
+		}
+		return 100 * level + 5 * level * level;
 	}
 
 	public int getMessages() {
@@ -56,6 +80,14 @@ public class FateUser {
 
 	public void setLastMessageTime(final long lastMessageTime) {
 		this.lastMessageTime = lastMessageTime;
+	}
+
+	public long getLastEffectiveMessageTime() {
+		return lastEffectiveMessageTime;
+	}
+
+	public void setLastEffectiveMessageTime(final long lastEffectiveMessageTime) {
+		this.lastEffectiveMessageTime = lastEffectiveMessageTime;
 	}
 
 	public long getLastIdleTime() {
