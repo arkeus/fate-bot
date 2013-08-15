@@ -45,4 +45,9 @@ public class UserManager {
 	public static String normalizeNick(final String nick) {
 		return nick.toLowerCase().trim();
 	}
+
+	public boolean hasFateUser(final String nick) {
+		final String normalizedNick = normalizeNick(nick);
+		return users.containsKey(normalizedNick);
+	}
 }

@@ -3,6 +3,7 @@ package io.arkeus.fatebot;
 import io.arkeus.fatebot.config.Config;
 import io.arkeus.fatebot.executors.ChronoThread;
 import io.arkeus.fatebot.handlers.CommandHandler;
+import io.arkeus.fatebot.handlers.DebugHandler;
 import io.arkeus.fatebot.handlers.MessageHandler;
 import io.arkeus.fatebot.handlers.PingHandler;
 import io.arkeus.fatebot.handlers.TraceHandler;
@@ -41,9 +42,10 @@ public class Fate extends PircBot {
 		Fate.logger.info("Initializing handlers");
 		handlers.put("trace", new TraceHandler(this));
 		handlers.put("trap", new TrapHandler(this));
-		handlers.put("command", new CommandHandler(this));
 		handlers.put("user", new UserHandler(this));
+		handlers.put("command", new CommandHandler(this));
 		handlers.put("ping", new PingHandler(this));
+		handlers.put("debug", new DebugHandler(this));
 		Fate.logger.info("Handlers initialized");
 	}
 
@@ -178,6 +180,10 @@ public class Fate extends PircBot {
 
 	public FateUser getFateUser(final String nick) {
 		return users.getFateUser(nick);
+	}
+
+	public boolean hasFateUser(final String nick) {
+		return users.hasFateUser(nick);
 	}
 
 	public UserManager getUsers() {

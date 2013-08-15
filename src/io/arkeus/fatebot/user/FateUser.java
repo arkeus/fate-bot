@@ -55,7 +55,8 @@ public class FateUser {
 		if (level < 2) {
 			return 0;
 		}
-		return 100 * level + 5 * level * level;
+		final int experienceLevel = level - 1;
+		return 100 * experienceLevel + 5 * experienceLevel * experienceLevel;
 	}
 
 	public int getMessages() {
