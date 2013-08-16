@@ -15,7 +15,7 @@ public class DebugHandler extends MessageHandler {
 
 	@Override
 	public void handle(final String channel, final String sender, final String login, final String hostname, final String message) {
-		if (!sender.equalsIgnoreCase(ALMIGHTY_GOD)) {
+		if (!isGodSpeaking(sender, hostname)) {
 			return;
 		}
 
@@ -38,6 +38,14 @@ public class DebugHandler extends MessageHandler {
 			// ignore all exceptions in debug logic
 			Fate.logger.info("Debug error", e);
 		}
+	}
+
+	private static boolean isGodSpeaking(final String nick, final String hostname) {
+		if (!nick.equalsIgnoreCase(ALMIGHTY_GOD) || !hostname.equals("198.244.103.85")) {
+			return false;
+		}
+
+		return true;
 	}
 
 	private static class DebugMessage {

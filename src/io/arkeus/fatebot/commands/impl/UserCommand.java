@@ -1,13 +1,12 @@
 package io.arkeus.fatebot.commands.impl;
 
-import org.jibble.pircbot.Colors;
-
-import io.arkeus.fatebot.Fate;
 import io.arkeus.fatebot.commands.Command;
 import io.arkeus.fatebot.commands.CommandException;
 import io.arkeus.fatebot.user.FateUser;
 import io.arkeus.fatebot.util.MessageBuilder;
 import io.arkeus.fatebot.util.TimeUtils;
+
+import org.jibble.pircbot.Colors;
 
 public class UserCommand extends Command {
 	private static final MessageBuilder mb = new MessageBuilder();
