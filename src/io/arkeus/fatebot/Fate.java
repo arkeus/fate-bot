@@ -29,13 +29,11 @@ public class Fate extends PircBot {
 	private final Config config;
 	private final Map<String, MessageHandler> handlers;
 	private final UserManager users;
-	private boolean inChannel;
 
 	public Fate(final Config config) {
 		this.config = config;
 		this.handlers = new LinkedHashMap<>();
 		this.users = new UserManager();
-		this.inChannel = false;
 	}
 
 	private void initializeHandlers() {
@@ -78,27 +76,6 @@ public class Fate extends PircBot {
 	}
 
 	@Override
-	protected void onJoin(final String channel, final String sender, final String login, final String hostname) {
-		if (channel.equals(config.getChannel()) && sender.equals(getNick())) {
-			inChannel = true;
-		}
-	}
-
-	@Override
-	protected void onPart(final String channel, final String sender, final String login, final String hostname) {
-		if (channel.equals(config.getChannel()) && sender.equals(getNick())) {
-			inChannel = false;
-		}
-	}
-
-	@Override
-	protected void onQuit(final String sourceNick, final String sourceLogin, final String sourceHostname, final String reason) {
-		if (sourceNick.equals(getNick())) {
-			inChannel = false;
-		}
-	}
-
-	@Override
 	protected void onNotice(final String sourceNick, final String sourceLogin, final String sourceHostname, final String target, final String notice) {
 		if (config.getPassword() == null || config.getPassword().isEmpty() || notice.indexOf("This nickname is registered") == -1) {
 			return;
@@ -124,7 +101,7 @@ public class Fate extends PircBot {
 	}
 
 	public void chronoTick() {
-		if (!isConnected() || !inChannel) {
+		if (!isConnected() || !inChannel()) {
 			Fate.logger.info("Not in channel, skipping chrono tick");
 			return;
 		}
@@ -158,6 +135,16 @@ public class Fate extends PircBot {
 		}
 
 		joinChannel(config.getChannel());
+	}
+
+	public boolean inChannel() {
+		for (final String channel : getChannels()) {
+			Fate.logger.info("k " + channel + " == " + config.getChannel());
+			if (channel.equalsIgnoreCase(config.getChannel())) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public Config getConfig() {

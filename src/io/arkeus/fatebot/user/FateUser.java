@@ -1,6 +1,5 @@
 package io.arkeus.fatebot.user;
 
-import io.arkeus.fatebot.Fate;
 
 public class FateUser {
 	private static final long EFFECT_MESSAGE_DELAY = 5_000;
@@ -45,9 +44,6 @@ public class FateUser {
 	}
 
 	public int getExperience() {
-		Fate.logger.info("Idle ticks " + idleTicks);
-		Fate.logger.info("Effective " + effectiveMessages);
-		Fate.logger.info("Messages " + messages);
 		return idleTicks * 2 + effectiveMessages * 2;
 	}
 
