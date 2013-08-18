@@ -176,4 +176,8 @@ public class Fate extends PircBot {
 	public UserManager getUsers() {
 		return users;
 	}
+
+	public boolean isAdministrator(final String nick) {
+		return config.getAdministrators().contains(UserManager.normalizeNick(nick));
+	}
 }

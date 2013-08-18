@@ -18,4 +18,8 @@
 	<prefix>;</prefix>
 	<!-- Path to the data directory. This is where databases and other saved files will be stored. Must exist. Required. -->
 	<directory>/home/fatebot/data</directory>
+	<!-- A list of admin users. How this works will likely change in the future. -->
+	<administrators>
+		<user>Arkeus</user>
+	</administrators>
 </bot>

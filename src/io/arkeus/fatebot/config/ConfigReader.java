@@ -1,7 +1,11 @@
 package io.arkeus.fatebot.config;
 
+import io.arkeus.fatebot.user.UserManager;
+
 import java.io.File;
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -36,6 +40,7 @@ public class ConfigReader {
 		config.setLogin(getString("login", "FateBot"));
 		config.setPrefix(getString("prefix", ";"));
 		config.setRoot(getString("directory", null));
+		config.setAdministrators(getAdministrators());
 
 		return config;
 	}
@@ -84,5 +89,15 @@ public class ConfigReader {
 			throw new IllegalArgumentException("Expected exactly one config value for tag '" + tagName + "', found " + length);
 		}
 		return (Element) nodes.item(0);
+	}
+
+	private Set<String> getAdministrators() {
+		final Element administratorElement = getElement("administrator");
+		final NodeList administratorNodes = administratorElement.getChildNodes();
+		final Set<String> administrators = new HashSet<String>(administratorNodes.getLength());
+		for (int i = 0; i < administratorNodes.getLength(); i++) {
+			administrators.add(UserManager.normalizeNick(administratorNodes.item(i).getTextContent()));
+		}
+		return administrators;
 	}
 }

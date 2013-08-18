@@ -1,6 +1,7 @@
 package io.arkeus.fatebot.config;
 
 import java.io.File;
+import java.util.Set;
 
 public class Config {
 	private String nick;
@@ -12,6 +13,7 @@ public class Config {
 	private String login;
 	private String prefix;
 	private File root;
+	private Set<String> administrators;
 
 	public String getNick() {
 		return nick;
@@ -87,5 +89,13 @@ public class Config {
 
 	public void setRoot(final String root) {
 		this.root = new File(root);
+	}
+
+	public Set<String> getAdministrators() {
+		return administrators;
+	}
+
+	public void setAdministrators(final Set<String> administrators) {
+		this.administrators = administrators;
 	}
 }
