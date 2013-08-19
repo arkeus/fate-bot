@@ -46,6 +46,14 @@ public class TrapHandler extends MessageHandler {
 		this.pattern = Pattern.compile("\\b" + trap.toLowerCase() + "\\b");
 	}
 
+	public String getTrap() {
+		return trap;
+	}
+
+	public String getTrapper() {
+		return trapper;
+	}
+
 	public void disarmTrap() {
 		this.trap = null;
 		this.pattern = null;
