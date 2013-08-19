@@ -1,8 +1,11 @@
 package io.arkeus.fatebot.commands.impl;
 
+import org.jibble.pircbot.Colors;
+
 import io.arkeus.fatebot.commands.Command;
 import io.arkeus.fatebot.commands.CommandException;
 import io.arkeus.fatebot.handlers.TrapHandler;
+import io.arkeus.fatebot.util.MessageBuilder;
 
 public class PeekCommand extends Command {
 	public PeekCommand() {
@@ -23,6 +26,9 @@ public class PeekCommand extends Command {
 		}
 
 		final String trapper = handler.getTrapper();
-		bot.sendNotice(sender, "You peek at the trap card and find a [Shadow Word: " + trap + "], set by " + trapper);
+		final MessageBuilder mb = new MessageBuilder();
+		mb.appendBrackets("Trap", trap, Colors.BLUE);
+		mb.appendBrackets("Trapper", trapper, Colors.BROWN);
+		bot.sendNotice(sender, mb.toString());
 	}
 }
