@@ -8,6 +8,8 @@ import io.arkeus.fatebot.handlers.TrapHandler;
 import io.arkeus.fatebot.util.MessageBuilder;
 
 public class PeekCommand extends Command {
+	private static final MessageBuilder mb = new MessageBuilder();
+
 	public PeekCommand() {
 		super(0);
 	}
@@ -26,7 +28,7 @@ public class PeekCommand extends Command {
 		}
 
 		final String trapper = handler.getTrapper();
-		final MessageBuilder mb = new MessageBuilder();
+		mb.clear();
 		mb.appendBrackets("Trap", trap, Colors.BLUE);
 		mb.appendBrackets("Trapper", trapper, Colors.BROWN);
 		bot.sendNotice(sender, mb.toString());
