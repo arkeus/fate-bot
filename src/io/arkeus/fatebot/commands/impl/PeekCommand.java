@@ -29,7 +29,7 @@ public class PeekCommand extends Command {
 
 		final String trapper = handler.getTrapper();
 		mb.clear();
-		mb.appendBrackets("Trap", trap, Colors.BLUE);
+		mb.appendBrackets("Trap", trap, Colors.BLUE).append(" ");
 		mb.appendBrackets("Trapper", trapper, Colors.BROWN);
 		bot.sendNotice(sender, mb.toString());
 	}
