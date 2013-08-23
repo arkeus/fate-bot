@@ -92,7 +92,7 @@ public class ConfigReader {
 	}
 
 	private Set<String> getAdministrators() {
-		final Element administratorElement = getElement("administrator");
+		final Element administratorElement = getElement("administrators");
 		final NodeList administratorNodes = administratorElement.getChildNodes();
 		final Set<String> administrators = new HashSet<String>(administratorNodes.getLength());
 		for (int i = 0; i < administratorNodes.getLength(); i++) {
