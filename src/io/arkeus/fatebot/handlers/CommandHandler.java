@@ -7,6 +7,7 @@ import io.arkeus.fatebot.commands.CommandException;
 import io.arkeus.fatebot.commands.CommandMap;
 import io.arkeus.fatebot.commands.InvalidCommandException;
 import io.arkeus.fatebot.commands.impl.LyricsCommand;
+import io.arkeus.fatebot.commands.impl.PeekCommand;
 import io.arkeus.fatebot.commands.impl.PingsCommand;
 import io.arkeus.fatebot.commands.impl.TrapCommand;
 import io.arkeus.fatebot.commands.impl.UserCommand;
@@ -23,6 +24,7 @@ public class CommandHandler extends MessageHandler {
 		commandMap.registerCommand(TrapCommand.class, "trap", "t");
 		commandMap.registerCommand(UserCommand.class, "user", "u");
 		commandMap.registerCommand(PingsCommand.class, "pings", "p");
+		commandMap.registerCommand(PeekCommand.class, "peek");
 	}
 
 	@Override
