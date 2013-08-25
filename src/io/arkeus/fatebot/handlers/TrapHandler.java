@@ -10,6 +10,7 @@ import org.jibble.pircbot.User;
 public class TrapHandler extends MessageHandler {
 	private String trap;
 	private String trapper;
+	private long trapTime;
 	private Pattern pattern;
 
 	public TrapHandler(final Fate bot) {
@@ -43,6 +44,7 @@ public class TrapHandler extends MessageHandler {
 	public void setTrap(final String trap, final String trapper) {
 		this.trap = trap;
 		this.trapper = trapper;
+		this.trapTime = System.currentTimeMillis();
 		this.pattern = Pattern.compile("\\b" + trap.toLowerCase() + "\\b");
 	}
 
@@ -52,6 +54,10 @@ public class TrapHandler extends MessageHandler {
 
 	public String getTrapper() {
 		return trapper;
+	}
+
+	public long getTrapTime() {
+		return trapTime;
 	}
 
 	public void disarmTrap() {
