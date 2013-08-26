@@ -93,6 +93,8 @@ public class Fate extends PircBot {
 				Fate.logger.info("Attempting to reconnect...");
 				reconnect();
 			} catch (final Exception e) {
+				// ignore
+			} finally {
 				try {
 					Thread.sleep(25000);
 				} catch (final InterruptedException ignore) {}
