@@ -6,6 +6,7 @@ import io.arkeus.fatebot.commands.Command;
 import io.arkeus.fatebot.commands.CommandException;
 import io.arkeus.fatebot.handlers.TrapHandler;
 import io.arkeus.fatebot.util.MessageBuilder;
+import io.arkeus.fatebot.util.TimeUtils;
 
 public class PeekCommand extends Command {
 	private static final MessageBuilder mb = new MessageBuilder();
@@ -30,7 +31,8 @@ public class PeekCommand extends Command {
 		final String trapper = handler.getTrapper();
 		mb.clear();
 		mb.appendBrackets("Trap", trap, Colors.BLUE).append(" ");
-		mb.appendBrackets("Trapper", trapper, Colors.BROWN);
+		mb.appendBrackets("Trapper", trapper, Colors.BROWN).append(" ");
+		mb.appendBrackets("Time", TimeUtils.getDurationFromMillis(handler.getTrapTime()) + " ago", Colors.DARK_BLUE);
 		bot.sendNotice(sender, mb.toString());
 	}
 }
