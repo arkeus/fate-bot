@@ -7,6 +7,7 @@ public class FateUser {
 	private final String nick;
 	private int messages;
 	private int effectiveMessages;
+	private String lastMessage;
 	private long lastMessageTime;
 	private long lastEffectiveMessageTime;
 	private long lastIdleTime;
@@ -25,10 +26,11 @@ public class FateUser {
 		return nick;
 	}
 
-	public void addMessage() {
+	public void addMessage(final String message) {
 		final long now = System.currentTimeMillis();
 		messages++;
 		lastMessageTime = now;
+		lastMessage = message;
 
 		if (lastEffectiveMessageTime < now - EFFECT_MESSAGE_DELAY) {
 			lastEffectiveMessageTime = now;
@@ -69,6 +71,14 @@ public class FateUser {
 
 	public void setEffectiveMessages(final int effectiveMessages) {
 		this.effectiveMessages = effectiveMessages;
+	}
+
+	public String getLastMessage() {
+		return lastMessage;
+	}
+
+	public void setLastMessage(final String lastMessage) {
+		this.lastMessage = lastMessage;
 	}
 
 	public long getLastMessageTime() {
