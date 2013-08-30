@@ -1,9 +1,12 @@
 package io.arkeus.fatebot.commands.impl;
 
+import org.jibble.pircbot.Colors;
+
 import io.arkeus.fatebot.commands.Command;
 import io.arkeus.fatebot.commands.CommandException;
 import io.arkeus.fatebot.user.FateUser;
 import io.arkeus.fatebot.util.MessageBuilder;
+import io.arkeus.fatebot.util.TimeUtils;
 
 public class SeenCommand extends Command {
 	private static final MessageBuilder mb = new MessageBuilder();
@@ -22,6 +25,10 @@ public class SeenCommand extends Command {
 			return;
 		}
 
-		bot.sendMessage(channel, "test");
+		mb.clear();
+		mb.appendBrackets("Seen", TimeUtils.getDurationFromMillis(System.currentTimeMillis() - user.getLastMessageTime()), Colors.GREEN).append(" ");
+		mb.appendBrackets("Saying", user.getLastMessage(), Colors.OLIVE);
+
+		bot.sendMessage(channel, mb.toString());
 	}
 }
