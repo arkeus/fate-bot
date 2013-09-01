@@ -15,6 +15,7 @@ import io.arkeus.fatebot.user.UserManager;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -49,6 +50,20 @@ public class Fate extends PircBot {
 
 	private void initializeThreads() {
 		(new ChronoThread(this)).start();
+	}
+
+	// TODO: Move to user class?
+	private void initializeAdmins() {
+		final Set<String> administrators = config.getAdministrators();
+		for (final String administrator : administrators) {
+			// 0. Setup useful variables
+			final String normalizedNick = UserManager.normalizeNick(administrator);
+			@SuppressWarnings("unused")
+			final FateUser fateUser = users.getOrCreateFateUser(normalizedNick);
+			// 1. Enable pings for admins by default
+			final PingHandler handler = (PingHandler) getHandler("ping");
+			handler.setPingableStatus(normalizedNick, true);
+		}
 	}
 
 	@Override
@@ -119,6 +134,7 @@ public class Fate extends PircBot {
 	public void initialize() throws NickAlreadyInUseException, IOException, IrcException {
 		initializeHandlers();
 		initializeThreads();
+		initializeAdmins();
 
 		setLogin(config.getLogin());
 		setVerbose(config.getVerbose());
