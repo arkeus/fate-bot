@@ -24,6 +24,10 @@ import org.jibble.pircbot.NickAlreadyInUseException;
 import org.jibble.pircbot.PircBot;
 import org.jibble.pircbot.User;
 
+/**
+ * A generic irc bot developed for #lightninghoof. Contains commands to waste everyone's time, as a
+ * good bot should do.
+ */
 public class Fate extends PircBot {
 	public static final Logger logger = LogManager.getLogger(Fate.class.getName());
 
