@@ -41,6 +41,10 @@ public class Fate extends PircBot {
 		this.users = new UserManager();
 	}
 
+	/**
+	 * Create a new handler of each type and add it to the handler map.
+	 * To obtain a specific handler, use {@link #getHandler(String)}.
+	 */
 	private void initializeHandlers() {
 		Fate.logger.info("Initializing handlers");
 		handlers.put("trace", new TraceHandler(this));
