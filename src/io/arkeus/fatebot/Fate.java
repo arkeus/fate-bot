@@ -56,6 +56,9 @@ public class Fate extends PircBot {
 		Fate.logger.info("Handlers initialized");
 	}
 
+	/**
+	 * Initializes any separate threads to run in the background.
+	 */
 	private void initializeThreads() {
 		(new ChronoThread(this)).start();
 	}
