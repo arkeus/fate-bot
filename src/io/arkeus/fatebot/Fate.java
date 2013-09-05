@@ -145,11 +145,11 @@ public class Fate extends PircBot {
 		}
 	}
 
-        /**
-         * Handles all one time initialization of the bot. This binds the
-         * handlers, sets up the threads and admins, sets various parameters
-         * based on the configuration, and connects to the server.
-         */
+	/**
+	 * Handles all one time initialization of the bot. This binds the
+	 * handlers, sets up the threads and admins, sets various parameters
+	 * based on the configuration, and connects to the server.
+	 */
 	public void initialize() throws NickAlreadyInUseException, IOException, IrcException {
 		initializeHandlers();
 		initializeThreads();
