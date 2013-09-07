@@ -169,6 +169,11 @@ public class Fate extends PircBot {
 		joinChannel(config.getChannel());
 	}
 
+	/**
+	 * Returns whether or not the bot is currently in the configured channel.
+	 *
+	 * @return True if the bot is in the configured channel, false otherwise.
+	 */
 	public boolean inChannel() {
 		for (final String channel : getChannels()) {
 			Fate.logger.info("k " + channel + " == " + config.getChannel());
