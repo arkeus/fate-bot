@@ -189,10 +189,21 @@ public class Fate extends PircBot {
 		return false;
 	}
 
+	/**
+	 * Returns the configuration the bot was loaded with.
+	 *
+	 * @return The configuration.
+	 */
 	public Config getConfig() {
 		return config;
 	}
 
+	/**
+	 * Given a handler name, returns the handler that was registered with that name.
+	 *
+	 * @param name The name of the handler.
+	 * @return The handler.
+	 */
 	public MessageHandler getHandler(final String name) {
 		return handlers.get(name);
 	}
