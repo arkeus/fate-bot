@@ -208,6 +208,13 @@ public class Fate extends PircBot {
 		return handlers.get(name);
 	}
 
+	/**
+	 * Given a nickname, returns the user in the channel with that nickname, or null if that
+	 * user is not in the channel.
+	 *
+	 * @param nick The nickname of the user to grab.
+	 * @return The user, in the form of a PircBot user.
+	 */
 	public User getUser(final String nick) {
 		final User[] users = getUsers(config.getChannel());
 		for (final User user : users) {
