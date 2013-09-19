@@ -236,6 +236,12 @@ public class Fate extends PircBot {
 		return users.getFateUser(nick);
 	}
 
+	/**
+	 * Returns whether the passed nick is a recognized fate user yet.
+	 *
+	 * @param nick The nickname of the user to check.
+	 * @return True if the user is a recognized fate user, false otherwise.
+	 */
 	public boolean hasFateUser(final String nick) {
 		return users.hasFateUser(nick);
 	}
