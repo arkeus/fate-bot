@@ -246,6 +246,11 @@ public class Fate extends PircBot {
 		return users.hasFateUser(nick);
 	}
 
+	/**
+	 * Returns the user manager for the bot.
+	 *
+	 * @return The user manager.
+	 */
 	public UserManager getUsers() {
 		return users;
 	}
