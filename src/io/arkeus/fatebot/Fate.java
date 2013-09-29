@@ -111,6 +111,11 @@ public class Fate extends PircBot {
 	}
 
 	@Override
+	protected void onConnect() {
+		joinChannel(config.getChannel());
+	}
+
+	@Override
 	protected void onDisconnect() {
 		Fate.logger.warn("Fate has been disconnected.");
 
@@ -170,8 +175,6 @@ public class Fate extends PircBot {
 				throw e;
 			}
 		}
-
-		joinChannel(config.getChannel());
 	}
 
 	/**
