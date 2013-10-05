@@ -258,6 +258,12 @@ public class Fate extends PircBot {
 		return users;
 	}
 
+	/**
+	 * Returns whether the passed nickname is an administrator.
+	 *
+	 * @param nick The nick to check.
+	 * @return Whether or not the nick is a bot administrator.
+	 */
 	public boolean isAdministrator(final String nick) {
 		return config.getAdministrators().contains(UserManager.normalizeNick(nick));
 	}
