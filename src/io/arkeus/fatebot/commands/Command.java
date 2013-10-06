@@ -2,6 +2,9 @@ package io.arkeus.fatebot.commands;
 
 import io.arkeus.fatebot.Fate;
 
+/**
+ * A class containing information about a single bot command.
+ */
 public abstract class Command {
 	protected final int expectedParameters;
 
