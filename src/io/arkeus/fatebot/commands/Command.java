@@ -19,6 +19,17 @@ public abstract class Command {
 		this.expectedParameters = expectedParameters;
 	}
 
+	/**
+	 * Initializes a command with all the information regarding who triggered the command.
+	 *
+	 * @param bot The bot instance.
+	 * @param channel The channel the command was used in.
+	 * @param sender The user who used the command.
+	 * @param login The login of the user who used the command.
+	 * @param hostname The hostname of the user who used the command.
+	 * @param message The entire command message.
+	 * @throws CommandException
+	 */
 	public void initialize(final Fate bot, final String channel, final String sender, final String login, final String hostname, final String message) throws CommandException {
 		this.bot = bot;
 		this.channel = channel;
