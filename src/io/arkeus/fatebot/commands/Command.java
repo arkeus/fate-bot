@@ -39,6 +39,10 @@ public abstract class Command {
 		this.arguments = new CommandArguments(message, expectedParameters);
 	}
 
+	/**
+	 * Validates arguments to the command and executes it. Outputs any {@link CommandException}
+	 * directly to the channel.
+	 */
 	public void execute() {
 		try {
 			validate();
