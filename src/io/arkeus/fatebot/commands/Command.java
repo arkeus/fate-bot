@@ -53,9 +53,19 @@ public abstract class Command {
 		}
 	}
 
+	/**
+	 * Validates all input to the command.
+	 *
+	 * @throws CommandException if validation fails.
+	 */
 	protected void validate() throws CommandException {
 		// todo?
 	}
 
+	/**
+	 * Runs the command. Each command has its own implementation.
+	 *
+	 * @throws CommandException
+	 */
 	protected abstract void run() throws CommandException;
 }
