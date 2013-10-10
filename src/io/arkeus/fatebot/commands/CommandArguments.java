@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
+/**
+ * A container for parsing the arguments for a single command message.
+ */
 public class CommandArguments {
 	private static final Pattern SPLIT_PATTERN = Pattern.compile("\\s+");
 	private final String alias;
