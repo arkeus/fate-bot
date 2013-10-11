@@ -34,6 +34,11 @@ public class CommandArguments {
 		}
 	}
 
+	/**
+	 * Gets the alias for the command, usually the first token in a message.
+	 *
+	 * @return The command alias.
+	 */
 	public String getAlias() {
 		return alias;
 	}
