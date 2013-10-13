@@ -53,6 +53,11 @@ public class CommandArguments {
 		return parameters.get(index);
 	}
 
+	/**
+	 * Gets the number of parameters passed to this command.
+	 *
+	 * @return The number of parameters.
+	 */
 	public int numParameters() {
 		return parameters.size();
 	}
