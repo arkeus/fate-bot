@@ -43,6 +43,12 @@ public class CommandArguments {
 		return alias;
 	}
 
+	/**
+	 * Gets the parameter at the given index in the message.
+	 *
+	 * @param index The index of the parameter to grab.
+	 * @return The parameter.
+	 */
 	public String getParameter(final int index) {
 		return parameters.get(index);
 	}
