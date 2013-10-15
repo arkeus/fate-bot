@@ -62,6 +62,11 @@ public class CommandArguments {
 		return parameters.size();
 	}
 
+	/**
+	 * Gets the message of the command. Anything after the final expected parameter is part of the message.
+	 *
+	 * @return The command's message.
+	 */
 	public String getMessage() {
 		return parameters.get(parameters.size() - 1);
 	}
