@@ -71,6 +71,12 @@ public class CommandArguments {
 		return parameters.get(parameters.size() - 1);
 	}
 
+	/**
+	 * Given a message, extracts the alias when parsed as a command.
+	 *
+	 * @param message The message to extract the alias from.
+	 * @return The alias of the command represented by the message.
+	 */
 	public static String getAlias(final String message) {
 		return SPLIT_PATTERN.split(message, 2)[0].substring(1);
 	}
