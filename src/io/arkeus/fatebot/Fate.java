@@ -184,7 +184,6 @@ public class Fate extends PircBot {
 	 */
 	public boolean inChannel() {
 		for (final String channel : getChannels()) {
-			Fate.logger.info("k " + channel + " == " + config.getChannel());
 			if (channel.equalsIgnoreCase(config.getChannel())) {
 				return true;
 			}
