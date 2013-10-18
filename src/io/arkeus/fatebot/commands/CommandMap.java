@@ -3,6 +3,9 @@ package io.arkeus.fatebot.commands;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * A container that maps command aliases to their corresopnding commands.
+ */
 public class CommandMap {
 	private final Map<String, Class<?>> commands;
 
