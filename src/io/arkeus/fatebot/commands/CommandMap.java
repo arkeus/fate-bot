@@ -13,6 +13,12 @@ public class CommandMap {
 		commands = new HashMap<>();
 	}
 
+	/**
+	 * Registers a command to any number of aliases. An entry is inserted for each alias.
+	 *
+	 * @param klass The command to register.
+	 * @param aliases Any number of aliases to map to the given command.
+	 */
 	public void registerCommand(final Class<?> klass, final String... aliases) {
 		for (final String alias : aliases) {
 			commands.put(alias, klass);
