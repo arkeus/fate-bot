@@ -25,6 +25,13 @@ public class CommandMap {
 		}
 	}
 
+	/**
+	 * Given a command alias, returns the corresponding command.
+	 *
+	 * @param alias The alias of the command to get.
+	 * @return The command.
+	 * @throws InvalidCommandException
+	 */
 	public Command get(final String alias) throws InvalidCommandException {
 		final Class<?> klass = commands.get(alias);
 		if (klass == null) {
