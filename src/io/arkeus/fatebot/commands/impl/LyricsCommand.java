@@ -8,6 +8,9 @@ import io.arkeus.fatebot.util.http.HttpException;
 
 import java.io.IOException;
 
+/**
+ * A command that searches for a song given some lyrics.
+ */
 public class LyricsCommand extends Command {
 	public LyricsCommand() {
 		super(1);
