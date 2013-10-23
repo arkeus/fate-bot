@@ -8,6 +8,9 @@ import io.arkeus.fatebot.handlers.TrapHandler;
 import io.arkeus.fatebot.util.MessageBuilder;
 import io.arkeus.fatebot.util.TimeUtils;
 
+/**
+ * A command to peek at the current trap card, if any.
+ */
 public class PeekCommand extends Command {
 	private static final MessageBuilder mb = new MessageBuilder();
 
@@ -17,6 +20,7 @@ public class PeekCommand extends Command {
 
 	@Override
 	protected void run() throws CommandException {
+		// TODO: Make this part a super thing
 		if (!bot.isAdministrator(sender)) {
 			return;
 		}
