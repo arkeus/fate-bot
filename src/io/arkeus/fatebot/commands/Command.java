@@ -14,9 +14,15 @@ public abstract class Command {
 	protected String login;
 	protected String hostname;
 	protected CommandArguments arguments;
+	protected boolean requiresAdministrator;
 
 	public Command(final int expectedParameters) {
+		this(expectedParameters, false);
+	}
+
+	public Command(final int expectedParameters, final boolean requiresAdministrator) {
 		this.expectedParameters = expectedParameters;
+		this.requiresAdministrator = requiresAdministrator;
 	}
 
 	/**
@@ -50,6 +56,8 @@ public abstract class Command {
 		} catch(final CommandException e) {
 			bot.sendMessage(channel, "Error: " + e.getMessage());
 			Fate.logger.error("Recieved invalid command or invalid arguments, ignoring", e);
+		} catch (final InvalidPermissionsException e) {
+			// ignore, user using the command does not have permissions
 		}
 	}
 
@@ -57,9 +65,12 @@ public abstract class Command {
 	 * Validates all input to the command.
 	 *
 	 * @throws CommandException if validation fails.
+	 * @throws InvalidPermissionsException
 	 */
-	protected void validate() throws CommandException {
-		// todo?
+	protected void validate() throws CommandException, InvalidPermissionsException {
+		if (!bot.isAdministrator(sender)) {
+			throw new InvalidPermissionsException();
+		}
 	}
 
 	/**

@@ -20,11 +20,6 @@ public class PeekCommand extends Command {
 
 	@Override
 	protected void run() throws CommandException {
-		// TODO: Make this part a super thing
-		if (!bot.isAdministrator(sender)) {
-			return;
-		}
-
 		final TrapHandler handler = (TrapHandler) bot.getHandler("trap");
 		final String trap = handler.getTrap();
 		if (trap == null) {
