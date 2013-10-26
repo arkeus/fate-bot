@@ -5,6 +5,10 @@ import io.arkeus.fatebot.commands.CommandException;
 import io.arkeus.fatebot.handlers.PingHandler;
 import io.arkeus.fatebot.user.UserManager;
 
+/**
+ * A command that controls whether or not missed pings should be whispered to you
+ * after missing a message that contains your name.
+ */
 public class PingsCommand extends Command {
 	public PingsCommand() {
 		super(1);
