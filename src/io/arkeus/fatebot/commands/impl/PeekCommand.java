@@ -15,7 +15,7 @@ public class PeekCommand extends Command {
 	private static final MessageBuilder mb = new MessageBuilder();
 
 	public PeekCommand() {
-		super(0);
+		super(0, true);
 	}
 
 	@Override
