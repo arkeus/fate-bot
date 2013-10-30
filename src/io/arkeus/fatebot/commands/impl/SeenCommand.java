@@ -8,6 +8,9 @@ import io.arkeus.fatebot.user.FateUser;
 import io.arkeus.fatebot.util.MessageBuilder;
 import io.arkeus.fatebot.util.TimeUtils;
 
+/**
+ * A command to tell you the last time a user was seen talking in the channel.
+ */
 public class SeenCommand extends Command {
 	private static final MessageBuilder mb = new MessageBuilder();
 
