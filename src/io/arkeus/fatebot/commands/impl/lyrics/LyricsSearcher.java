@@ -10,6 +10,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * Provides a searcher class allowing you to find songs by lyrics.
+ */
 public class LyricsSearcher {
 	private static final String ENDPOINT = "http://api.lyricsnmusic.com/songs";
 	private static final String API_KEY = "387c2a5e7882754970466007fe227c"; // TODO: Pass through config so people supply their own?
