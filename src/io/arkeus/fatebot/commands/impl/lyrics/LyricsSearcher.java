@@ -17,6 +17,16 @@ public class LyricsSearcher {
 	private static final String ENDPOINT = "http://api.lyricsnmusic.com/songs";
 	private static final String API_KEY = "387c2a5e7882754970466007fe227c"; // TODO: Pass through config so people supply their own?
 
+	/**
+	 * Given a string of lyrics, searches for the best that matches them.
+	 *
+	 * @param lyrics The lyrics to search for.
+	 * @return A song object with information regarding the top match.
+	 * @throws JsonProcessingException
+	 * @throws IOException
+	 * @throws HttpException
+	 * @throws CommandException
+	 */
 	public static Song searchLyrics(final String lyrics) throws JsonProcessingException, IOException, HttpException, CommandException {
 		final JsonNode root = new ObjectMapper().readTree(HttpClient.get(generateRequestURL(lyrics)));
 		final JsonNode topMatch = root.get(0);
