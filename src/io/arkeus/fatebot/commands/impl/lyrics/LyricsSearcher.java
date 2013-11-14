@@ -36,6 +36,11 @@ public class LyricsSearcher {
 		return new Song(topMatch.get("title").asText(), topMatch.get("artist").get("name").asText(), topMatch.get("url").asText());
 	}
 
+	/**
+	 * Generates a search request URL to lyrics n music for the specified lyrics.
+	 * @param lyrics The lyrics to search for.
+	 * @return The request URL.
+	 */
 	private static String generateRequestURL(final String lyrics) {
 		return String.format("%s?api_key=%s&lyrics=%s", ENDPOINT, API_KEY, lyrics);
 	}
