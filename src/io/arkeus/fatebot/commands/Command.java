@@ -68,7 +68,7 @@ public abstract class Command {
 	 * @throws InvalidPermissionsException
 	 */
 	protected void validate() throws CommandException, InvalidPermissionsException {
-		if (!bot.isAdministrator(sender)) {
+		if (requiresAdministrator && !bot.isAdministrator(sender)) {
 			throw new InvalidPermissionsException();
 		}
 	}
