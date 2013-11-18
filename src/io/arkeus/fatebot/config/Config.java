@@ -3,6 +3,9 @@ package io.arkeus.fatebot.config;
 import java.io.File;
 import java.util.Set;
 
+/**
+ * A class containing all the config required to run the bot.
+ */
 public class Config {
 	private String nick;
 	private String altNick;
