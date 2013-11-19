@@ -7,7 +7,9 @@ import java.util.Set;
  * A class containing all the config required to run the bot.
  */
 public class Config {
+	/** The nick to connect to the server with. */
 	private String nick;
+	/** The alternative nick to connect to the server with, if the main nick is taken. */
 	private String altNick;
 	private String password;
 	private String server;
