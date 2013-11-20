@@ -11,7 +11,9 @@ public class Config {
 	private String nick;
 	/** The alternative nick to connect to the server with, if the main nick is taken. */
 	private String altNick;
+	/** The password to identify with to nickserv on the server. */
 	private String password;
+	/** The server to connect to. */
 	private String server;
 	private String channel;
 	private Boolean verbose;
