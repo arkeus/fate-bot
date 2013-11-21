@@ -137,8 +137,14 @@ public class Fate extends PircBot {
 	 * A single time based tick. Handle all periodic updates here.
 	 */
 	public void chronoTick() {
-		if (!isConnected() || !inChannel()) {
-			Fate.logger.info("Not in channel, skipping chrono tick");
+		if (!isConnected()) {
+			Fate.logger.info("Not in server, skipping chrono tick");
+			return;
+		} else if (!inChannel()) {
+			Fate.logger.info("Not in channel, skipping chrono tick and attempting to join");
+			try {
+				joinChannel(config.getChannel());
+			} catch (final Exception ignore) {}
 			return;
 		}
 
