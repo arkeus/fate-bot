@@ -15,6 +15,7 @@ public class Config {
 	private String password;
 	/** The server to connect to. */
 	private String server;
+	/** The channel for the bot to join. */
 	private String channel;
 	private Boolean verbose;
 	private String login;
