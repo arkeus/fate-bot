@@ -17,6 +17,7 @@ public class Config {
 	private String server;
 	/** The channel for the bot to join. */
 	private String channel;
+	/** Whether or not to run in verbose mode and log extra information. */
 	private Boolean verbose;
 	private String login;
 	private String prefix;
