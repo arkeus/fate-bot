@@ -19,6 +19,7 @@ public class Config {
 	private String channel;
 	/** Whether or not to run in verbose mode and log extra information. */
 	private Boolean verbose;
+	/** The login for the bot to use when connecting to the server. */
 	private String login;
 	private String prefix;
 	private File root;
