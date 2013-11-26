@@ -21,6 +21,7 @@ public class Config {
 	private Boolean verbose;
 	/** The login for the bot to use when connecting to the server. */
 	private String login;
+	/** The prefix that must be used before a command in order to activate it. */
 	private String prefix;
 	private File root;
 	private Set<String> administrators;
