@@ -23,6 +23,7 @@ public class Config {
 	private String login;
 	/** The prefix that must be used before a command in order to activate it. */
 	private String prefix;
+	/** Root directory for the bot, where data should be stored. */
 	private File root;
 	private Set<String> administrators;
 
