@@ -25,6 +25,7 @@ public class Config {
 	private String prefix;
 	/** Root directory for the bot, where data should be stored. */
 	private File root;
+	/** The set of users who have administrator privileges to run restricted commands. */
 	private Set<String> administrators;
 
 	public String getNick() {
