@@ -29,7 +29,7 @@ public class TrapHandler extends MessageHandler {
 			final User trapperUser = bot.getUser(trapper);
 			final String target = Math.random() < 0.2 && trapperUser != null && !trapperUser.isOp() ? trapper : sender;
 			if (!bot.getUser(target).isOp()) {
-				bot.kick(channel, target, "You have activated my trap card: [Shadow Word: " + trap + "]! I banish you to the Shadow Realm!" + (sender != target ? " But what's this? My spell has been reflected at the one who set the trap!" : ""));
+				bot.kick(channel, target, "You have activated " + trapper + "'s trap card: [Shadow Word: " + trap + "]! I banish you to the Shadow Realm!" + (sender != target ? " But what's this? My spell has been reflected at the one who set the trap!" : ""));
 			} else {
 				bot.sendMessage(channel, "It appears you are too strong for me to banish you, " + target + "... " + trapper + "'s card has fizzled.");
 			}
