@@ -7,6 +7,9 @@ import java.util.regex.Pattern;
 import org.jibble.pircbot.Colors;
 import org.jibble.pircbot.User;
 
+/**
+ * Handler to take care of handling messages and checking them against any currently set trap.
+ */
 public class TrapHandler extends MessageHandler {
 	private String trap;
 	private String trapper;
