@@ -1,5 +1,8 @@
 package io.arkeus.fatebot.message;
 
+/**
+ * A structure for containing information about a single message in a channel.
+ */
 public class Message {
 	private String nick;
 	private String message;
