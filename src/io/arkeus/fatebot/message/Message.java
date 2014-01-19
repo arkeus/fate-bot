@@ -9,6 +9,14 @@ public class Message {
 	private long time;
 	private String channel;
 
+	/**
+	 * Construct a message structure for a single message.
+	 *
+	 * @param nick The user who sent the message.
+	 * @param message The full message being sent.
+	 * @param time The time the message was received.
+	 * @param channel The channel the message was sent in.
+	 */
 	public Message(final String nick, final String message, final long time, final String channel) {
 		this.nick = nick;
 		this.message = message;
