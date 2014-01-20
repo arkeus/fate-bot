@@ -24,10 +24,20 @@ public class Message {
 		this.channel = channel;
 	}
 
+	/**
+	 * Returns the nick of the user who sent the message.
+	 *
+	 * @return The user's nick.
+	 */
 	public String getNick() {
 		return nick;
 	}
 
+	/**
+	 * Sets the nick of the user who sent the message.
+	 *
+	 * @param nick The user's nick.
+	 */
 	public void setNick(final String nick) {
 		this.nick = nick;
 	}
