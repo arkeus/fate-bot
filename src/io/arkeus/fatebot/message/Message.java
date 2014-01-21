@@ -42,6 +42,11 @@ public class Message {
 		this.nick = nick;
 	}
 
+	/**
+	 * Returns the full message that was sent.
+	 *
+	 * @return The message.
+	 */
 	public String getMessage() {
 		return message;
 	}
