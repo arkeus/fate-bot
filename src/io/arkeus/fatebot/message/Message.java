@@ -51,6 +51,11 @@ public class Message {
 		return message;
 	}
 
+	/**
+	 * Sets the full message that was sent.
+	 *
+	 * @param message The full message.
+	 */
 	public void setMessage(final String message) {
 		this.message = message;
 	}
