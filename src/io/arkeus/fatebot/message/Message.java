@@ -60,6 +60,11 @@ public class Message {
 		this.message = message;
 	}
 
+	/**
+	 * Returns the time the message was sent.
+	 *
+	 * @return The message time.
+	 */
 	public long getTime() {
 		return time;
 	}
