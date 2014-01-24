@@ -69,6 +69,11 @@ public class Message {
 		return time;
 	}
 
+	/**
+	 * Sets the time the message was sent.
+	 *
+	 * @param time The message time.
+	 */
 	public void setTime(final long time) {
 		this.time = time;
 	}
