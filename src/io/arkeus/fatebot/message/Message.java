@@ -78,6 +78,11 @@ public class Message {
 		this.time = time;
 	}
 
+	/**
+	 * Returns the channel the message was sent to.
+	 *
+	 * @return The message's channel.
+	 */
 	public String getChannel() {
 		return channel;
 	}
