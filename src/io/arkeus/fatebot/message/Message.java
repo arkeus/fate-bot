@@ -87,6 +87,11 @@ public class Message {
 		return channel;
 	}
 
+	/**
+	 * Sets the channel this message was sent to.
+	 *
+	 * @param channel The channel the message was sent to.
+	 */
 	public void setChannel(final String channel) {
 		this.channel = channel;
 	}
