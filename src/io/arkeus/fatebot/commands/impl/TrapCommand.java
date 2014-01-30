@@ -4,6 +4,9 @@ import io.arkeus.fatebot.commands.Command;
 import io.arkeus.fatebot.commands.CommandException;
 import io.arkeus.fatebot.handlers.TrapHandler;
 
+/**
+ * A command that traps a word and kicks the next user to say that word.
+ */
 public class TrapCommand extends Command {
 	public TrapCommand() {
 		super(1);
