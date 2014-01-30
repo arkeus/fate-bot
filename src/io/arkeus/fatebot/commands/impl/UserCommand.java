@@ -8,6 +8,9 @@ import io.arkeus.fatebot.util.TimeUtils;
 
 import org.jibble.pircbot.Colors;
 
+/**
+ * A command to return information about a user.
+ */
 public class UserCommand extends Command {
 	private static final MessageBuilder mb = new MessageBuilder();
 
