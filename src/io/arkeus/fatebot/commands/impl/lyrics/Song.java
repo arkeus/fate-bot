@@ -1,5 +1,8 @@
 package io.arkeus.fatebot.commands.impl.lyrics;
 
+/**
+ * A container containing information about a song.
+ */
 public class Song {
 	private final String name;
 	private final String artist;
