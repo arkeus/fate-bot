@@ -8,6 +8,13 @@ public class Song {
 	private final String artist;
 	private final String url;
 
+	/**
+	 * Create a new song container.
+	 *
+	 * @param name The name of the song.
+	 * @param artist The artist of the song.
+	 * @param url The URL of the external song information.
+	 */
 	public Song(final String name, final String artist, final String url) {
 		this.name = name;
 		this.artist = artist;
