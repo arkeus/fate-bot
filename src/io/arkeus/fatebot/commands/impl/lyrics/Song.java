@@ -21,6 +21,11 @@ public class Song {
 		this.url = url;
 	}
 
+	/**
+	 * Returns the name of the song.
+	 *
+	 * @return The song name.
+	 */
 	public String getName() {
 		return name;
 	}
