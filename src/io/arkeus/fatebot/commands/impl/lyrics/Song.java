@@ -24,12 +24,17 @@ public class Song {
 	/**
 	 * Returns the name of the song.
 	 *
-	 * @return The song name.
+	 * @return The song's name.
 	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * Returns the artist(s) of the song.
+	 *
+	 * @return The song's artists.
+	 */
 	public String getArtist() {
 		return artist;
 	}
