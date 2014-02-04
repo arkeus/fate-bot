@@ -39,6 +39,11 @@ public class Song {
 		return artist;
 	}
 
+	/**
+	 * Returns the URL of the external song information page.
+	 *
+	 * @return The song's external URL.
+	 */
 	public String getUrl() {
 		return url;
 	}
