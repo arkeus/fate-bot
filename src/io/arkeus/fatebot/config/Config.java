@@ -28,6 +28,11 @@ public class Config {
 	/** The set of users who have administrator privileges to run restricted commands. */
 	private Set<String> administrators;
 
+	/**
+	 * Returns the nick of the bot.
+	 *
+	 * @return The bot's nick.
+	 */
 	public String getNick() {
 		return nick;
 	}
