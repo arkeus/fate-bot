@@ -46,6 +46,11 @@ public class Config {
 		this.nick = nick;
 	}
 
+	/**
+	 * Returns the alternate nick of the bot.
+	 *
+	 * @return The bot's alternate nick.
+	 */
 	public String getAltNick() {
 		return altNick;
 	}
