@@ -37,6 +37,11 @@ public class Config {
 		return nick;
 	}
 
+	/**
+	 * Sets the nick of the bot.
+	 *
+	 * @param nick The bot's nick.
+	 */
 	public void setNick(final String nick) {
 		this.nick = nick;
 	}
