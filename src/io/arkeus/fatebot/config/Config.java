@@ -55,6 +55,11 @@ public class Config {
 		return altNick;
 	}
 
+	/**
+	 * Sets the alternative nick of the bot.
+	 *
+	 * @param altNick The bot's alternative nick.
+	 */
 	public void setAltNick(final String altNick) {
 		this.altNick = altNick;
 	}
