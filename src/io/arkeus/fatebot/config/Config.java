@@ -64,6 +64,11 @@ public class Config {
 		this.altNick = altNick;
 	}
 
+	/**
+	 * Returns the password for the bot's nick.
+	 *
+	 * @return The bot's password.
+	 */
 	public String getPassword() {
 		return password;
 	}
