@@ -73,6 +73,11 @@ public class Config {
 		return password;
 	}
 
+	/**
+	 * Sets the password for the bot's nick.
+	 *
+	 * @param password The bot's password.
+	 */
 	public void setPassword(final String password) {
 		this.password = password;
 	}
