@@ -82,6 +82,11 @@ public class Config {
 		this.password = password;
 	}
 
+	/**
+	 * Returns the server the bot should connect to.
+	 *
+	 * @return The bot's server.
+	 */
 	public String getServer() {
 		return server;
 	}
