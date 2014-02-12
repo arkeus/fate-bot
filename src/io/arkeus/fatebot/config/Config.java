@@ -91,6 +91,11 @@ public class Config {
 		return server;
 	}
 
+	/**
+	 * Sets the server the bot should connect to.
+	 *
+	 * @param server The bot's server.
+	 */
 	public void setServer(final String server) {
 		this.server = server;
 	}
