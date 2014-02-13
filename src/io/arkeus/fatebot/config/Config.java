@@ -100,6 +100,11 @@ public class Config {
 		this.server = server;
 	}
 
+	/**
+	 * Gets the channel the bot should run in.
+	 *
+	 * @return The channel of the bot.
+	 */
 	public String getChannel() {
 		return channel;
 	}
