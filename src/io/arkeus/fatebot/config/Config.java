@@ -109,6 +109,11 @@ public class Config {
 		return channel;
 	}
 
+	/**
+	 * Sets the channel the bot should run in.
+	 *
+	 * @param channel The channel of the bot.
+	 */
 	public void setChannel(final String channel) {
 		this.channel = channel;
 	}
