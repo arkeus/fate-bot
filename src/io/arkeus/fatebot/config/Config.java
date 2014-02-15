@@ -118,6 +118,11 @@ public class Config {
 		this.channel = channel;
 	}
 
+	/**
+	 * Returns whether or not the bot is running in verbose mode.
+	 *
+	 * @return The verbose mode flag.
+	 */
 	public Boolean getVerbose() {
 		return verbose;
 	}
