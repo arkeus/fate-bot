@@ -127,6 +127,11 @@ public class Config {
 		return verbose;
 	}
 
+	/**
+	 * Sets the verbose flag for the bot to run in verbose mode.
+	 *
+	 * @param verbose Whether or not to run in verbose mode.
+	 */
 	public void setVerbose(final Boolean verbose) {
 		this.verbose = verbose;
 	}
