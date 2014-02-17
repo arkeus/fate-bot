@@ -136,6 +136,11 @@ public class Config {
 		this.verbose = verbose;
 	}
 
+	/**
+	 * Returns the login of the bot.
+	 *
+	 * @return The bot's login.
+	 */
 	public String getLogin() {
 		return login;
 	}
