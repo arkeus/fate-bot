@@ -145,6 +145,11 @@ public class Config {
 		return login;
 	}
 
+	/**
+	 * Sets the login of the bot.
+	 *
+	 * @param login The bot's login.
+	 */
 	public void setLogin(final String login) {
 		this.login = login;
 	}
