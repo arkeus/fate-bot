@@ -154,6 +154,11 @@ public class Config {
 		this.login = login;
 	}
 
+	/**
+	 * Gets the prefix required to input commands.
+	 *
+	 * @return The command prefix.
+	 */
 	public String getPrefix() {
 		return prefix;
 	}
