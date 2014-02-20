@@ -163,6 +163,11 @@ public class Config {
 		return prefix;
 	}
 
+	/**
+	 * Sets the prefix required to input commands.
+	 *
+	 * @param prefix The command prefix.
+	 */
 	public void setPrefix(final String prefix) {
 		this.prefix = prefix;
 	}
