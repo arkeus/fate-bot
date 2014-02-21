@@ -172,6 +172,11 @@ public class Config {
 		this.prefix = prefix;
 	}
 
+	/**
+	 * Gets the root workspace directory for the bot.
+	 *
+	 * @return The workspace directory.
+	 */
 	public File getRoot() {
 		return root;
 	}
