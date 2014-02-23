@@ -190,6 +190,11 @@ public class Config {
 		this.root = root;
 	}
 
+	/**
+	 * Sets the root workspace directory for the bot.
+	 *
+	 * @param root The workspace directory.
+	 */
 	public void setRoot(final String root) {
 		this.root = new File(root);
 	}
