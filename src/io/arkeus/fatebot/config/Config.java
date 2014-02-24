@@ -199,6 +199,11 @@ public class Config {
 		this.root = new File(root);
 	}
 
+	/**
+	 * Gets the list of administrator nicks.
+	 *
+	 * @return The administrators for the bot.
+	 */
 	public Set<String> getAdministrators() {
 		return administrators;
 	}
