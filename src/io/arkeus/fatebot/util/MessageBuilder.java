@@ -2,6 +2,9 @@ package io.arkeus.fatebot.util;
 
 import org.jibble.pircbot.Colors;
 
+/**
+ * A builder to create messages with formatting applied.
+ */
 public class MessageBuilder {
 	private final StringBuilder builder;
 
