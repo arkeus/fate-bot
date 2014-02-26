@@ -208,6 +208,11 @@ public class Config {
 		return administrators;
 	}
 
+	/**
+	 * Sets the list of administrators.
+	 *
+	 * @param administrators The administrators for the bot.
+	 */
 	public void setAdministrators(final Set<String> administrators) {
 		this.administrators = administrators;
 	}
