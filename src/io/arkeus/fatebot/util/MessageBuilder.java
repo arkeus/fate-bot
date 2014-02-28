@@ -13,7 +13,7 @@ public class MessageBuilder {
 	}
 
 	/**
-	 * Appens a bracketed value using the given color.
+	 * Appends a bracketed value using the given color.
 	 *
 	 * @param value The value to show.
 	 * @param color The color of the brackets.
@@ -26,6 +26,14 @@ public class MessageBuilder {
 		return this;
 	}
 
+	/**
+	 * Appends a bracketed key and value using the given color.
+	 *
+	 * @param key The key to show.
+	 * @param value The value to show.
+	 * @param color The color of the brackets.
+	 * @return The message builder.
+	 */
 	public MessageBuilder appendBrackets(final String key, final String value, final String color) {
 		builder.append(Colors.NORMAL).append(color).append(Colors.BOLD).append("[");
 		builder.append(Colors.NORMAL).append(Colors.BOLD).append(key).append(Colors.NORMAL).append(" ").append(value).append(Colors.NORMAL);
