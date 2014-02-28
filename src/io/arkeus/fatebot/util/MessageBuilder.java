@@ -12,6 +12,13 @@ public class MessageBuilder {
 		this.builder = new StringBuilder();
 	}
 
+	/**
+	 * Appens a bracketed value using the given color.
+	 *
+	 * @param value The value to show.
+	 * @param color The color of the brackets.
+	 * @return The message builder.
+	 */
 	public MessageBuilder appendBrackets(final String value, final String color) {
 		builder.append(Colors.NORMAL)	.append(Colors.BOLD).append(color).append("[");
 		builder.append(Colors.NORMAL).append(value).append(Colors.NORMAL);
