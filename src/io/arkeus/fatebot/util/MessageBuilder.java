@@ -41,6 +41,12 @@ public class MessageBuilder {
 		return this;
 	}
 
+	/**
+	 * Appends another message builder to this message builder.
+	 *
+	 * @param mb The message builder to append.
+	 * @return The message builder.
+	 */
 	public MessageBuilder append(final MessageBuilder mb) {
 		builder.append(mb.toString());
 		return this;
