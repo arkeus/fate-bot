@@ -52,6 +52,12 @@ public class MessageBuilder {
 		return this;
 	}
 
+	/**
+	 * Appends a basic string to this message builder.
+	 *
+	 * @param str The string to append.
+	 * @return The message builder.
+	 */
 	public MessageBuilder append(final String str) {
 		builder.append(str);
 		return this;
