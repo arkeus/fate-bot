@@ -63,6 +63,11 @@ public class MessageBuilder {
 		return this;
 	}
 
+	/**
+	 * Clears the content of this message builder.
+	 *
+	 * @return The message builder.
+	 */
 	public MessageBuilder clear() {
 		builder.setLength(0);
 		return this;
