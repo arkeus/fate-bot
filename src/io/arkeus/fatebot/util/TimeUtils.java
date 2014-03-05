@@ -4,6 +4,12 @@ package io.arkeus.fatebot.util;
  * Time utilities.
  */
 public class TimeUtils {
+	/**
+	 * Given a number of milliseconds, calculates a duration string.
+	 *
+	 * @param millis How long the duration should represent.
+	 * @return The duration string.
+	 */
 	public static String getDurationFromMillis(final long millis) {
 		final long seconds = millis / 1000;
 		final long minutes = seconds / 60;
