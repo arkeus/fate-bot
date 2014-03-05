@@ -1,5 +1,8 @@
 package io.arkeus.fatebot.util;
 
+/**
+ * Time utilities.
+ */
 public class TimeUtils {
 	public static String getDurationFromMillis(final long millis) {
 		final long seconds = millis / 1000;
