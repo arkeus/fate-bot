@@ -8,6 +8,9 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+/**
+ * A simply client allowing you to make HTTP calls.
+ */
 public class HttpClient {
 	public static String get(final String requestURL) throws HttpException {
 		try (final BufferedReader reader = new BufferedReader(new InputStreamReader(generateURL(requestURL).openConnection().getInputStream()))) {
