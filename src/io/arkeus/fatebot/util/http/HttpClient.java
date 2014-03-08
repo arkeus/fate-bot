@@ -12,6 +12,12 @@ import java.net.URL;
  * A simply client allowing you to make HTTP calls.
  */
 public class HttpClient {
+	/**
+	 * Does a get request on the passed URL and returns the result as a string.
+	 * @param requestURL
+	 * @return
+	 * @throws HttpException
+	 */
 	public static String get(final String requestURL) throws HttpException {
 		try (final BufferedReader reader = new BufferedReader(new InputStreamReader(generateURL(requestURL).openConnection().getInputStream()))) {
 			final StringBuilder sb = new StringBuilder();
