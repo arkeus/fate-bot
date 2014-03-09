@@ -33,6 +33,14 @@ public class HttpClient {
 		}
 	}
 
+	/**
+	 * Generates a URL object from a URL string.
+	 *
+	 * @param requestURL The URL String.
+	 * @return The URL object.
+	 * @throws MalformedURLException
+	 * @throws URISyntaxException
+	 */
 	private static URL generateURL(final String requestURL) throws MalformedURLException, URISyntaxException {
 		final URL url = new URL(requestURL);
 		final URI uri = new URI(url.getProtocol(), url.getUserInfo(), url.getHost(), url.getPort(), url.getPath(), url.getQuery(), url.getRef());
